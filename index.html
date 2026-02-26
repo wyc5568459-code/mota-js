@@ -6,9 +6,12 @@
     <meta http-equiv='X-UA-Compatible' content='IE=Edge, chrome=1'>
     <meta name='author' content='ckcz123'>
     <meta name='viewport'
-        content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes'>
+        content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover, user-scalable=no'>
     <title>HTML5魔塔</title>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#000000" />
     <meta name="screen-orientation" content="portrait">
     <meta name="full-screen" content="yes">
     <meta name="browsermode" content="application">
@@ -16,6 +19,8 @@
     <meta name="x5-fullscreen" content="true">
     <meta name="x5-page-mode" content="app">
     <link type='text/css' href='styles.css' rel='stylesheet'>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="logo.png">
 </head>
 
 <body>
@@ -198,6 +203,15 @@
     <script src='libs/thirdparty/zip.min.js'></script>
     <script id='mainScript' src='main.js'></script>
     <script>main.init('play'); main.listen();</script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('./sw.js').catch(function (err) {
+                    console.warn('Service Worker 注册失败：', err);
+                });
+            });
+        }
+    </script>
 
 </body>
 
