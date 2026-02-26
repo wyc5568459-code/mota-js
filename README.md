@@ -68,6 +68,23 @@ HTML5 canvas制作的魔塔样板，支持全平台游戏！
 
 ## 更新说明
 
+## GitHub Pages（HTTPS 手机可玩）快速发布
+
+本仓库已提供直接部署到 GitHub Pages 的基础配置（`.github/workflows/deploy-pages.yml`、`.nojekyll`、`manifest.webmanifest`、`sw.js`）。
+
+### 一次性配置
+
+1. 将仓库推送到 GitHub（`main` 或 `master` 分支）。
+2. 在 GitHub 仓库页面进入 **Settings -> Pages**。
+3. 在 **Build and deployment** 中选择 **GitHub Actions**。
+4. 等待 `Deploy to GitHub Pages` 工作流完成。
+
+### 访问方式
+
+- 发布后可通过：`https://<你的用户名>.github.io/<仓库名>/` 打开。
+- 由于默认开启 HTTPS，手机浏览器可直接访问并游玩。
+- 已增加 PWA manifest 与 service worker，首次加载后可提升移动端访问体验。
+
 ## 2023.2 HTML5魔塔样板V2.10.3
 
 * [x] 取消了游戏画面的抗锯齿
