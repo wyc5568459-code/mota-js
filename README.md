@@ -85,6 +85,18 @@ HTML5 canvas制作的魔塔样板，支持全平台游戏！
 - 由于默认开启 HTTPS，手机浏览器可直接访问并游玩。
 - 已增加 PWA manifest 与 service worker，首次加载后可提升移动端访问体验。
 
+
+### 常见问题（Setup Pages 报 Not Found）
+
+若 Actions 中 `Setup Pages` 报错：`Get Pages site failed ... Not Found`，通常是仓库的 Pages 站点尚未初始化。
+
+可按以下顺序处理：
+
+1. 进入 **Settings -> Pages**，确认 `Source` 是 **GitHub Actions**。
+2. 进入 **Settings -> Actions -> General**，将 **Workflow permissions** 设置为 **Read and write permissions**。
+3. 回到 Actions 页面，对 `Deploy to GitHub Pages` 点击 **Re-run jobs**。
+4. 若仍失败，检查仓库是否受组织策略限制（组织管理员可禁用 Pages）。
+
 ## 2023.2 HTML5魔塔样板V2.10.3
 
 * [x] 取消了游戏画面的抗锯齿
